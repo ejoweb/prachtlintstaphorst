@@ -1,0 +1,96 @@
+/**
+Theme Name: Prachtlint Staphorst
+Theme URI: https://github.com/ejoweb/prachtlintstaphorst/
+Author: Erik Joling
+Author URI: https://www.ejoweb.nl/
+Description: WordPress blokkenthema voor Prachtlint Staphorst Nieuwleusen
+Requires at least: 6.2
+Tested up to: 6.2
+Requires PHP: 8
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pls
+*/
+
+
+/* ------------------------------- DEFAULTS -------------------------------- */
+
+
+/*
+ * Smooth scroll when `to top`-link is clicked
+ */
+html {
+    scroll-behavior: smooth;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* -------------------------------- GENERAL -------------------------------- */
+
+
+.wp-site-blocks > .wp-block-cover {
+	padding: 0;
+}
+
+.wp-site-blocks > .wp-block-cover > .wp-block-cover__inner-container {
+	max-width: var(--wp--custom--layout--full-size);
+	margin-top: var(--wp--preset--spacing--40);
+	margin-bottom: var(--wp--preset--spacing--40);
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 180px rgba(0,0,0,0.25);
+	background-color: var(--wp--preset--color--base);
+}
+
+/* Overwrite default core behaviour */
+.has-global-padding :where(.has-global-padding) {
+  padding-right: var(--wp--style--root--padding-right);
+  padding-left: var(--wp--style--root--padding-left);
+}
+
+.has-global-padding :where(.has-global-padding) > .alignfull {
+  margin-right: calc(var(--wp--style--root--padding-right) * -1);
+  margin-left: calc(var(--wp--style--root--padding-left) * -1);
+}
+
+/* Force three-columned gallery to always have 3 columns */
+.wp-block-gallery.has-nested-images.columns-3 figure.wp-block-image:not(#individual-image) {
+	width:calc(33% - var(--wp--style--unstable-gallery-gap, 16px)/3);
+	height: clamp(200px, 20vw, 270px);
+}
+
+
+/* ----------------------------- CUSTOM CLASSES ----------------------------- */
+
+
+/* Overlap to top */
+.overlap-top {
+	margin-top: calc( var(--wp--preset--spacing--60) * -1 ) !important;
+	position: relative;
+}
+
+/* ------------------------------ BREAKPOINTS ------------------------------- */
+
+/* Reset boxed design */
+@media screen and (max-width: 1440px) {
+		
+	.wp-site-blocks > .wp-block-cover {
+		padding: 0;
+	}
+
+	.wp-site-blocks > .wp-block-cover > .wp-block-cover__inner-container {
+		padding: 0;
+	}
+
+}
+
+/* Breakpoint for tiny screens */
+@media screen and (max-width: 480px) {
+		
+
+}
