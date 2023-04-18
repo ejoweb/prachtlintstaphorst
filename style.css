@@ -67,10 +67,20 @@ html {
 	margin-left: calc(var(--wp--style--root--padding-left) * -1);
 }
 
+/* Site logo */
+header .wp-block-site-logo {
+	margin-bottom: calc( var(--wp--preset--spacing--70) * -1 );
+	position: relative;
+	z-index: 99;
+}
 
+footer .wp-block-image.site-logo {
+	margin-top: calc( var(--wp--preset--spacing--50) * -2 );
+	position: relative;
+	z-index: 99;
+}
 
 /* Cover block */
-
 .wp-block-cover {
 	padding-right: var(--wp--style--root--padding-right);
   	padding-left: var(--wp--style--root--padding-left);
@@ -100,7 +110,10 @@ html {
 @media screen and (min-width: 720px) {
 
 	.wp-site-blocks > .wp-block-cover {
-		padding: var(--wp--preset--spacing--40);
+		padding-top: var(--wp--style--root--padding-top);
+		padding-bottom: var(--wp--style--root--padding-bottom);
+		padding-right: var(--wp--style--root--padding-right);
+		padding-left: var(--wp--style--root--padding-left);
 	}
 }
 
