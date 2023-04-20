@@ -80,6 +80,15 @@ footer .wp-block-image.site-logo {
 	z-index: 99;
 }
 
+main:where(.wp-block-group.has-background) {
+	padding: 0;
+}
+
+/* Banner */
+main > .wp-block-cover:first-child {
+	min-height: var(--wp--custom--spacing--banner-height) !important;
+}
+
 /* Cover block */
 .wp-block-cover {
 	padding-right: var(--wp--style--root--padding-right);
@@ -98,9 +107,15 @@ footer .wp-block-image.site-logo {
 	padding-left: 0;
 }
 
+/* Navigation */
+
+.wp-block-navigation-item.home .wp-block-navigation-item__label {
+	vertical-align: text-bottom;
+}
+
+
 
 /* -------------------------------- CUSTOM ---------------------------------- */
-
 
 
 

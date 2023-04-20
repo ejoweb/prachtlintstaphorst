@@ -123,6 +123,9 @@
 				"small": "6px",
 				"medium": "10px"
 			},
+			"spacing": {
+				"bannerHeight": "clamp(12rem, 20vw, 16rem)"
+			},
 			"layout": {
 				"fullSize": "60rem"
 			}

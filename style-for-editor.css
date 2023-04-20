@@ -11,4 +11,37 @@ The goal is to keep this file to a minimum.
 /* Remove global padding from site container */
 .editor-styles-wrapper {
 	padding: 0 !important;
+	background-image: url(assets/images/placeholder.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* Layout for post title and post-content */
+.edit-post-visual-editor__post-title-wrapper,
+.editor-styles-wrapper > .is-root-container:not(.wp-site-blocks) {
+	background-color: var(--wp--preset--color--base);
+	margin-left: auto;
+	margin-right: auto;	
+	/* max-width: var(--wp--custom--layout--main-size); */
+	max-width: calc( var(--wp--custom--layout--full-size) - (var(--wp--style--root--padding-left) + var(--wp--style--root--padding-right)));
+	padding-left: var(--wp--style--root--padding-left);
+	padding-right: var(--wp--style--root--padding-right);
+    padding-top: var(--wp--style--root--padding-top);
+	padding-bottom: var(--wp--style--root--padding-bottom);
+}
+
+/* Correct the layout of the Post Title in the Post Editor */
+.edit-post-visual-editor__post-title-wrapper {
+	margin-bottom: 0;
+	padding-bottom: 1px; /* Remove padding, but also prevent margin-bottom overflow of post-title */
+}
+
+/* Correct the layout of the Post Content in the Post Editor */
+.editor-styles-wrapper > .is-root-container:not(.wp-site-blocks) {
+	padding-top: 1px; /* Prevent margin overflow */
+}
+
+/* Fix spacing bug when there are no blocks in the post-editor */
+.editor-styles-wrapper > .is-root-container > .block-list-appender:first-child {
+	padding-top: 1px;
 }
