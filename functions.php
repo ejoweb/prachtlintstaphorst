@@ -24,6 +24,9 @@ add_action( 'after_setup_theme', function() {
 	// Enqueue scripts and styles to the editor
 	add_action( 'enqueue_block_editor_assets', 'pls_add_editor_styles_and_scripts' );
 
+	// Default image on post archive
+	
+
 } );
 
 
