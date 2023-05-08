@@ -75,11 +75,11 @@
 				}
 			],
 			"fontSizes": [
-				{ "name": "Small",    "slug": "small",    "size": "1rem" },
-				{ "name": "Medium",   "slug": "medium",   "size": "clamp(1.125rem, 4vw, 1.25rem)" },
-				{ "name": "Large",    "slug": "large",    "size": "clamp(1.5rem, 4vw, 1.5rem)" },
-				{ "name": "X-large",  "slug": "x-large",  "size": "clamp(2.5rem, 4vw, 2.5rem)" },
-				{ "name": "XX Large", "slug": "xx-large", "size": "clamp(3.5rem, 4vw, 3.5rem)" }
+				{ "name": "Small",    "slug": "small",    "size": "clamp(0.875rem, 4vw, 1rem)" },
+				{ "name": "Medium",   "slug": "medium",   "size": "clamp(1rem, 4vw, 1.25rem)" },
+				{ "name": "Large",    "slug": "large",    "size": "clamp(1.25rem, 4vw, 1.5rem)" },
+				{ "name": "X-large",  "slug": "x-large",  "size": "clamp(2rem, 4vw, 2.5rem)" },
+				{ "name": "XX Large", "slug": "xx-large", "size": "clamp(3rem, 4vw, 3.5rem)" }
 			],
 			"customFontSize": false,
             "lineHeight": true,
@@ -105,11 +105,11 @@
 			"margin": true,
 			"padding": true,
 			"spacingSizes": [
-				{ "name": "1", "slug": "30", "size": "clamp(1rem, 4vw, 1rem)" },
-				{ "name": "2", "slug": "40", "size": "clamp(1.25rem, 4vw, 1.5rem)" },
-				{ "name": "3", "slug": "50", "size": "clamp(2rem, 4vw, 2.25rem)" },
-				{ "name": "4", "slug": "60", "size": "clamp(3rem, 4vw, 3.25rem)" },
-				{ "name": "5", "slug": "70", "size": "clamp(4rem, 4vw, 4.5rem)" }
+				{ "name": "1", "slug": "30", "size": "clamp(0.5rem, 4vw, 1rem)" },
+				{ "name": "2", "slug": "40", "size": "clamp(1rem, 4vw, 1.5rem)" },
+				{ "name": "3", "slug": "50", "size": "clamp(1.75rem, 4vw, 2.25rem)" },
+				{ "name": "4", "slug": "60", "size": "clamp(2.75rem, 4vw, 3.25rem)" },
+				{ "name": "5", "slug": "70", "size": "clamp(3.75rem, 4vw, 4.5rem)" }
 			],
 			"units": [ "%",	"px", "em", "rem", "vh", "vw" ]
 		},
@@ -146,9 +146,9 @@
 			"blockGap": "var(--wp--preset--spacing--50)",
 			"padding": {
 				"top": "var(--wp--preset--spacing--50)",
-				"right": "var(--wp--preset--spacing--50)",
+				"right": "var(--wp--preset--spacing--60)",
 				"bottom": "var(--wp--preset--spacing--50)",
-				"left": "var(--wp--preset--spacing--50)"
+				"left": "var(--wp--preset--spacing--60)"
 			}
 		},
 		"elements": {
