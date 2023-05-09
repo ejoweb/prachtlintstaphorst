@@ -24,9 +24,9 @@ add_action( 'after_setup_theme', function() {
 	// Enqueue scripts and styles to the editor
 	add_action( 'enqueue_block_editor_assets', 'pls_add_editor_styles_and_scripts' );
 
-	// Default image on post archive
+	// Use default featured image on special pages
+	// add_filter( 'post_thumbnail_html', 'pls_show_default_image_on_special_pages', 21, 5 );
 	
-
 } );
 
 
@@ -106,4 +106,35 @@ function pls_get_svg( $name = '' ) {
 	}
 
 	return $svg;
+}
+
+/**
+ * Show default featured image on special pages like post-archive and 404
+ */
+function pls_show_default_image_on_special_pages( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+
+	error_log('testttt');
+
+	if ( is_404() ) {
+		$default_thumbnail_id = get_option( 'dfi_image_id' ); // select the default thumb.
+	}
+
+	// Attributes can be a query string, parse that.
+	if ( is_string( $attr ) ) {
+		wp_parse_str( $attr, $attr );
+	}
+
+	if ( isset( $attr['class'] ) ) {
+		// There already are classes, we trust those.
+		$attr['class'] .= ' default-featured-img';
+	} else {
+		// No classes in the attributes, try to get them form the HTML.
+		$img = new \WP_HTML_Tag_Processor( $html );
+		if ( $img->next_tag() ) {
+			$attr['class'] = trim( $img->get_attribute( 'class' ) . ' default-featured-img' );
+		}
+	}
+
+	$html = wp_get_attachment_image( $default_thumbnail_id, $size, false, $attr );
+	return apply_filters( 'dfi_thumbnail_html', $html, $post_id, $default_thumbnail_id, $size, $attr );
 }

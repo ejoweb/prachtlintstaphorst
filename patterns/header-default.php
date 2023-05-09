@@ -2,16 +2,12 @@
 /**
  * Title: Default Header
  * Slug: pls/header-default
- * Categories: header
- * Block Types: core/template-part/header
+ * Categories: hidden
+ * Inserter: no
  */
 ?>
-<!-- wp:group {"backgroundColor":"contrast","textColor":"base","layout":{"type":"default"}} -->
-<div class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background"><!-- wp:paragraph -->
-<p>Header</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|40"}}},"backgroundColor":"base","textColor":"primary","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
+<div class="wp-block-group has-primary-color has-base-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:site-logo {"width":147,"shouldSyncIcon":true} /-->
 
-<!-- wp:cover {"url":"/wp-content/themes/prachtlintstaphorst/assets/images/placeholder.png","dimRatio":50,"overlayColor":"base","minHeight":50,"isDark":false} -->
-<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="/wp-content/themes/prachtlintstaphorst/assets/images/placeholder.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"></div></div>
-<!-- /wp:cover -->
+<!-- wp:navigation {"ref":38,"textColor":"contrast","icon":"menu","overlayBackgroundColor":"base","overlayTextColor":"contrast","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"0"}}} /--></div>
+<!-- /wp:group -->

@@ -1,7 +1,8 @@
 <?php
 /**
- * Title: Hidden 404
- * Slug: pls/hidden-404
+ * Title: 404
+ * Slug: pls/404
+ * Categories: hidden
  * Inserter: no
  */
 ?>
