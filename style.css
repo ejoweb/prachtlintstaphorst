@@ -228,6 +228,26 @@ footer .wp-block-image.site-logo {
 }
 
 
+/**
+ * Single Post Template
+ */
+/* .single-post main > .wp-block-post-featured-image:first-child,
+.single-post main > .wp-block-post-featured-image:first-child img {
+	height: 400px !important;
+}
+
+.single-post main > .wp-block-cover:first-child {
+	min-height: 400px !important;
+}
+
+.single-post main > .wp-block-cover:first-child .wp-block-cover__inner-container {
+	max-width: none;
+} */
+
+/* ----------------------------- CUSTOM CLASSES ----------------------------- */
+
+
+
 
 /* ------------------------------ BREAKPOINTS ------------------------------- */
 
