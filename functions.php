@@ -91,39 +91,22 @@ function pls_add_editor_styles_and_scripts() {
 	wp_enqueue_style( 'pls-style-for-editor' );
 }
 
+/**
+ * Contact form 7 - add class to submit button
+ */
+function pls_wpcf7_add_submit_button_class($output, $tag, $atts, $m) {
 
+    if ($tag === 'contact-form-7') {
+        $output = str_replace(
+            'wpcf7-submit',
+            'wpcf7-submit wp-block-button__link',
+            $output
+        );
+    }
 
-function pls_get_svg( $name = '' ) {
-
-	$svg = '';
-
-	if ($name) {
-		
-		$context = null; 
-
-		/**
-		 * Skip SSL check on local development due to SSL error
-		 * 
-		 * @link https://stackoverflow.com/questions/26148701/file-get-contents-ssl-operation-failed-with-code-1-failed-to-enable-crypto#26151993
-		 */
-		if ( wp_get_environment_type() == 'local' ) {
-
-			$contextOptions = array(
-			    "ssl" => array(
-			        "verify_peer" => false,
-			        "verify_peer_name" => false,
-			    )
-			);
-
-			$context = stream_context_create( $contextOptions );
-		}
-
-		$svg = file_get_contents( get_stylesheet_directory() . "/assets/svg/{$name}.svg", false, $context );
-		$svg = ($svg) ? $svg : '';
-	}
-
-	return $svg;
+    return $output;
 }
+
 
 /**
  * Show default featured image on special pages like post-archive and 404
@@ -154,21 +137,4 @@ function pls_show_default_image_on_special_pages( $html, $post_id, $post_thumbna
 
 	$html = wp_get_attachment_image( $default_thumbnail_id, $size, false, $attr );
 	return apply_filters( 'dfi_thumbnail_html', $html, $post_id, $default_thumbnail_id, $size, $attr );
-}
-
-
-/**
- * Contact form 7 - add class to submit button
- */
-function pls_wpcf7_add_submit_button_class($output, $tag, $atts, $m) {
-	
-    if ($tag === 'contact-form-7') {
-        $output = str_replace(
-            'wpcf7-submit',
-            'wpcf7-submit wp-block-button__link',
-            $output
-        );
-    }
-
-    return $output;
 }
