@@ -8,6 +8,11 @@ experience.
 The goal is to keep this file to a minimum. 
 */
 
+.editor-styles-wrapper {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
 /* Limit full size to better resemble the frontend */
 .editor-styles-wrapper > .is-root-container:not(.wp-site-blocks) {
 	max-width: calc( var(--wp--custom--layout--full-size) - (var(--wp--style--root--padding-left) + var(--wp--style--root--padding-right)));

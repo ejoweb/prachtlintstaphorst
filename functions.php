@@ -28,7 +28,7 @@ add_action( 'after_setup_theme', function() {
 	add_filter('do_shortcode_tag', 'pls_wpcf7_add_submit_button_class', 10, 4);
 
 	// Limit excerpt length
-	add_filter( 'excerpt_length', function($length) { return 40; } );
+	add_filter( 'excerpt_length', function($length) { return 32; } );
 
 	// Use default featured image on special pages
 	// add_filter( 'post_thumbnail_html', 'pls_show_default_image_on_special_pages', 21, 5 );
