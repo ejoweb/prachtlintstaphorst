@@ -185,7 +185,7 @@ main:where(.wp-block-group.has-background) {
  */
 main > .wp-block-post-content:first-child > .wp-block-cover:first-child,
 main > .wp-block-cover:first-child {
-	min-height: var(--wp--custom--spacing--banner-height) !important;
+	min-height: var(--wp--custom--spacing--banner-height);
 }
 
 main > .wp-block-post-content:first-child > .wp-block-cover:first-child > .wp-block-cover__inner-container,
@@ -197,7 +197,7 @@ main > .wp-block-post-content:first-child > .wp-block-post-featured-image:first-
 main > .wp-block-post-featured-image:first-child img,
 main > .wp-block-post-content:first-child > .wp-block-image:first-child img,
 main > .wp-block-image:first-child img {
-	height: var(--wp--custom--spacing--banner-height) !important;
+	height: var(--wp--custom--spacing--banner-height);
 	object-fit: cover;
 	border-radius: 0;
 }
