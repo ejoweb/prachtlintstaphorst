@@ -36,10 +36,13 @@ if (activitiesGroup) {
 
 			if (activityTitle && activityAnchor) {
 
+				// Use the URL api
 				activityAnchorLink = new URL(activityAnchor.href);
 
-				activityAnchorLink.searchParams.append('your-subject', activityTitle.textContent);
+				// Add parameter to the link
+				activityAnchorLink.searchParams.append('your-subject', 'Activiteit: ' + activityTitle.textContent);
 
+				// Update the href with the appended link
 				activityAnchor.href = activityAnchorLink;
 			}
 		}

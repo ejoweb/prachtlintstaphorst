@@ -24,7 +24,8 @@ add_action( 'after_setup_theme', function() {
 	// Enqueue scripts and styles to the editor
 	add_action( 'enqueue_block_editor_assets', 'pls_add_editor_styles_and_scripts' );
 
-	
+	// Add class to submit button for contact form 7
+	add_filter('do_shortcode_tag', 'pls_wpcf7_add_submit_button_class', 10, 4);
 
 	// Use default featured image on special pages
 	// add_filter( 'post_thumbnail_html', 'pls_show_default_image_on_special_pages', 21, 5 );
@@ -153,4 +154,21 @@ function pls_show_default_image_on_special_pages( $html, $post_id, $post_thumbna
 
 	$html = wp_get_attachment_image( $default_thumbnail_id, $size, false, $attr );
 	return apply_filters( 'dfi_thumbnail_html', $html, $post_id, $default_thumbnail_id, $size, $attr );
+}
+
+
+/**
+ * Contact form 7 - add class to submit button
+ */
+function pls_wpcf7_add_submit_button_class($output, $tag, $atts, $m) {
+	
+    if ($tag === 'contact-form-7') {
+        $output = str_replace(
+            'wpcf7-submit',
+            'wpcf7-submit wp-block-button__link',
+            $output
+        );
+    }
+
+    return $output;
 }
