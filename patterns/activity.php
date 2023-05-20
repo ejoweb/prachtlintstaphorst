@@ -24,11 +24,5 @@
 <p>Locatie: bijvoorbeeld</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-2","textColor":"base","className":"is-style-fill"} -->
-<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-base-color has-primary-2-background-color has-text-color has-background wp-element-button" href="/meedoen/">Meedoen</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
 </div>
 <!-- /wp:group -->
