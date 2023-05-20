@@ -16,3 +16,26 @@ The goal is to keep this file to a minimum.
 	padding-left: var(--wp--style--root--padding-left);
 	padding-right: var(--wp--style--root--padding-right);
 }
+
+/**
+ * Create userfriendly UX for Activities
+ */
+
+.wp-block-group.is-style-activities {
+	padding: var(--wp--preset--spacing--50) !important;
+	box-sizing: content-box;
+}
+
+.wp-block-group.is-style-activities:after {
+	border-radius: 1px;
+	bottom: 1px;
+	box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp--preset--color--base-x);
+	content: "";
+	left: 1px;
+	outline: 2px solid transparent;
+	pointer-events: none;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	z-index: 1;
+}

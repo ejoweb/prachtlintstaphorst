@@ -246,6 +246,24 @@ footer .wp-block-image.site-logo {
 
 /* ----------------------------- CUSTOM CLASSES ----------------------------- */
 
+.wp-block-group.is-style-activities {
+	display: grid;
+	gap: var(--wp--preset--spacing--50);
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-block-group.is-style-activities > * + * {
+	margin-block-start: 0;
+}
+
+.wp-block-group.is-style-activity {
+	border: 2px solid var(--wp--preset--color--base-x);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--50);
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 
 
 
@@ -262,6 +280,13 @@ footer .wp-block-image.site-logo {
 	}
 
 	.wp-block-post-template.is-flex-container {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (min-width: 960px) {
+
+	.wp-block-group.is-style-activities {
 		grid-template-columns: 1fr 1fr;
 	}
 }

@@ -24,6 +24,8 @@ add_action( 'after_setup_theme', function() {
 	// Enqueue scripts and styles to the editor
 	add_action( 'enqueue_block_editor_assets', 'pls_add_editor_styles_and_scripts' );
 
+	
+
 	// Use default featured image on special pages
 	// add_filter( 'post_thumbnail_html', 'pls_show_default_image_on_special_pages', 21, 5 );
 	
@@ -39,10 +41,11 @@ add_action( 'after_setup_theme', function() {
  */
 function pls_add_frontend_styles_and_scripts() {
 
-	// Register theme stylesheet.
+	// Get theme version (for cachebusting)
 	$theme_version = wp_get_theme()->get( 'Version' );
-
 	$version_string = is_string( $theme_version ) ? $theme_version : false;
+
+	// Register theme stylesheet.
 	wp_register_style(
 		'pls-style',
 		get_template_directory_uri() . '/style.css',
@@ -50,8 +53,20 @@ function pls_add_frontend_styles_and_scripts() {
 		$version_string
 	);
 
-	// Enqueue theme stylesheet.
+	// Enqueue theme stylesheet
 	wp_enqueue_style( 'pls-style' );
+
+	// Register theme script	
+	wp_register_script( 
+		'pls-script-for-frontend',
+        get_template_directory_uri() .'/assets/js/script-for-frontend.js', 
+		array(),
+		false, 
+		$version_string
+	);
+
+	// Enqueue theme script
+	wp_enqueue_script( 'pls-script-for-frontend' );
 }
 
 
@@ -66,7 +81,7 @@ function pls_add_editor_styles_and_scripts() {
 	$version_string = is_string( $theme_version ) ? $theme_version : false;
 	wp_register_style(
 		'pls-style-for-editor',
-		get_template_directory_uri() . '/style-for-editor.css',
+		get_template_directory_uri() . '/assets/css/style-for-editor.css',
 		array(),
 		$version_string
 	);
@@ -74,6 +89,7 @@ function pls_add_editor_styles_and_scripts() {
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'pls-style-for-editor' );
 }
+
 
 
 function pls_get_svg( $name = '' ) {
