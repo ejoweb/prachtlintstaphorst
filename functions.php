@@ -25,7 +25,7 @@ add_action( 'after_setup_theme', function() {
 	add_action( 'enqueue_block_editor_assets', 'pls_add_editor_styles_and_scripts' );
 
 	// Add class to submit button for contact form 7
-	add_filter('do_shortcode_tag', 'pls_wpcf7_add_submit_button_class', 10, 4);
+	add_filter( 'do_shortcode_tag', 'pls_wpcf7_add_submit_button_class', 10, 4 );
 
 	// Limit excerpt length
 	add_filter( 'excerpt_length', function($length) { return 32; } );
