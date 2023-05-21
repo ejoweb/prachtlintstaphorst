@@ -6,9 +6,9 @@
 	<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
 	<main class="wp-block-group alignfull">
 
-		<!-- wp:post-featured-image {"align":"full"} /-->
+		<!-- wp:post-featured-image {"height":"320px","align":"full","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} /-->
 
-		<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+		<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"1"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group alignfull">
 
 			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"fontSize":"small"} -->
@@ -28,6 +28,16 @@
 		<!-- /wp:group -->
 
 		<!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
+
+		<!-- wp:group {"style":{"spacing":{"blockGap":"0"},"typography":{"fontStyle":"italic"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group" style="font-style:italic">
+			<!-- wp:paragraph -->
+			<p>Geschreven door&nbsp; </p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:post-author-name /-->
+		</div>
+		<!-- /wp:group -->
 			
 	</main>
 	<!-- /wp:group -->
