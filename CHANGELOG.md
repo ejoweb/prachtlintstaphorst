@@ -1,15 +1,21 @@
 # Changelog
 
-Reminder: also add date to eacht version
+Reminder: also add date to each version
+
+## 0.3 - 2023-08-12
+
+- Checked compatibility with WordPress 6.3
+- Improved layout for site navigation and site
+- Improved table block design (for agenda)
 
 ## 0.2 - 2023-05-20
 
-- Improve news (single, loop, pattern)
-- Add simple setup for activities (pattern and style)
-- Add support for contact form 7
-- Add and improve patterns
-- Improve general styling
-- Cleanup and organize files
+- Improved news (single, loop, pattern)
+- Added simple setup for activities (pattern and style)
+- Added support for contact form 7
+- Added and improve patterns
+- Improved general styling
+- Cleaned up and organized files
 
 
 
