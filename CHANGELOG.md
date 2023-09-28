@@ -2,6 +2,14 @@
 
 Reminder: also add date to each version
 
+## 0.4 - 2023-09-28
+
+- Improved agenda feature
+  - New layout
+  - New patterns
+  - You can now use shortcode `agenda_upcoming`
+- Bugfix: vertical spacing issue fixed by removing theme-support for block-styles
+
 ## 0.3 - 2023-08-12
 
 - Checked compatibility with WordPress 6.3
