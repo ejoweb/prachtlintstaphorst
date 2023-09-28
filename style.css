@@ -429,24 +429,8 @@ footer .wp-block-image.site-logo {
  * Activities
  */
 
-.wp-block-group.is-style-activities {
-	display: grid;
-	gap: var(--wp--preset--spacing--50);
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.wp-block-group.is-style-activities > * + * {
-	margin-block-start: 0;
-}
-
-.wp-block-group.is-style-activity {
-	border: 4px solid var(--wp--preset--color--base-x);
-	/* background-color: var(--wp--preset--color--base-x); */
-	border-radius: var(--wp--custom--border-radius--medium);
-	padding: var(--wp--preset--spacing--50);
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+.wp-block-group.agenda-overview > * {
+	margin-bottom: 0;
 }
 
 /**

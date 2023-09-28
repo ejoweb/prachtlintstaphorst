@@ -32,6 +32,17 @@ add_action( 'after_setup_theme', function() {
 	
 } );
 
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @return void
+ */
+add_action( 'init', function() {
+
+	// Add shortcode for rendering upcoming agenda items
+	add_shortcode( 'agenda_upcoming', 'pls_shortcode_upcoming_agenda_items' );
+
+} );
 
 /* ### DEFINE FUNCTIONS ##################################################### */
 
@@ -137,4 +148,71 @@ function pls_show_default_image_on_special_pages( $html, $post_id, $post_thumbna
 
 	$html = wp_get_attachment_image( $default_thumbnail_id, $size, false, $attr );
 	return apply_filters( 'dfi_thumbnail_html', $html, $post_id, $default_thumbnail_id, $size, $attr );
+}
+
+/**
+ * Add 
+ */
+function pls_shortcode_upcoming_agenda_items( $atts = [], $content = null, $tag = '' ) {
+
+	// normalize attribute keys, lowercase
+	$atts = array_change_key_case( (array) $atts, CASE_LOWER );
+
+	// Start with empty output
+	$output = '';
+
+	// Get agenda post (page)
+	$agenda_post = get_page_by_path('agenda');
+
+	// Check if we have found the agenda page
+	if ($agenda_post) {
+
+		// // Get the blocks
+	    $blocks = parse_blocks( $agenda_post->post_content );
+
+		// Show only the header group and the first two events
+		foreach ( $blocks as $block ) {
+
+			// Agenda block name
+			if ( str_contains($block['attrs']['className'],'agenda-overview') ) {
+
+				/**
+				 * Render only the first three inner blocks (agenda items including header)
+				 */
+				for ($i = 0; $i < 3; ++$i) {
+
+					if ( isset($block['innerBlocks'][$i]) ) {
+						$output .= render_block($block['innerBlocks'][$i]);
+					}
+				}
+
+				/**
+				 * Wrap output in agenda block wrapper
+				 */
+				if ($output) {
+					$output = $block['innerContent'][0] . $output . end($block['innerContent']); 
+				}
+				
+				// Exit loop, because we only want to check the first occurence of agenda-overview
+				break;
+			}
+		}
+	}	
+	else {
+		$output = '<p>Geen activiteiten gevonden</p>';
+	}
+
+	// return output
+	return $output;
+
+}
+
+
+/* ### POLYFILLS ########################################################### */
+
+// Polyfill `str_contains` function for versions < PHP 8 
+if (!function_exists('str_contains')) {
+    function str_contains($haystack, $needle) {
+        return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+    }
 }

@@ -26,12 +26,12 @@ The goal is to keep this file to a minimum.
  * Create userfriendly UX for Activities
  */
 
-.wp-block-group.is-style-activities {
+.wp-block-group.agenda-overview {
 	padding: var(--wp--preset--spacing--50) !important;
 	box-sizing: content-box;
 }
 
-.wp-block-group.is-style-activities:after {
+.wp-block-group.agenda-overview:after {
 	border-radius: 1px;
 	bottom: 1px;
 	box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp--preset--color--base-x);
